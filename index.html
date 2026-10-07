@@ -3,15 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>
-    (function () {
-      document.documentElement.classList.add('js');
-      var q = new URLSearchParams(location.search);
-      if (q.has('project') || q.has('screen')) location.replace('demos/' + location.search + location.hash);
-    })();
-  </script>
+  <script>document.documentElement.classList.add('js');</script>
   <title>Mohammadreza Zare · mrzroot — Python developer &amp; automation builder</title>
-  <meta name="description" content="Portfolio of Mohammadreza Zare (M-R-Z, @mrzroot): Python developer, automation builder and open-source enthusiast in Mashhad, Iran. Projects, live demos, stack and contact.">
+  <meta name="description" content="Portfolio of Mohammadreza Zare (M-R-Z, @mrzroot): Python developer, automation builder and open-source enthusiast in Mashhad, Iran. Projects, stack and contact.">
   <meta name="author" content="Mohammadreza Zare">
   <meta name="theme-color" content="#07090d">
   <meta name="color-scheme" content="dark">
@@ -52,7 +46,6 @@
     <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.34-1.79.84l-4.93-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.18 13.2l-4.86-1.52c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.32 1.65.21 1.39 1.5z"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></g></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
-    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.52.85l10.4-6.5a1 1 0 0 0 0-1.7L9.52 4.65A1 1 0 0 0 8 5.5z"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></g></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></g></symbol>
   </svg>
@@ -70,7 +63,6 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#work" data-i18n="nav.work">Work</a>
-        <a href="#products" data-i18n="nav.demos">Demos</a>
         <a href="#stack" data-i18n="nav.stack">Stack</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -99,9 +91,7 @@
         <h1 id="hero-title" class="reveal" data-i18n="hero.title">Practical tools,<br><span class="grad">cleanly built.</span></h1>
         <p class="hero-lede reveal" data-i18n="hero.lede">I’m <strong>Mohammadreza Zare</strong> — a Python developer and automation builder. I write backend scripts, business dashboards and open-source utilities, and I keep the code simple, fast and readable.</p>
         <div class="hero-cta reveal">
-          <a class="btn btn-primary" href="#work"><span data-i18n="hero.cta1">See the work</span> <span class="btn-arrow" aria-hidden="true">↓</span></a>
-          <a class="btn btn-ghost" href="demos/"><svg aria-hidden="true"><use href="#i-play"/></svg><span data-i18n="hero.cta2">Open live demos</span></a>
-        </div>
+          <a class="btn btn-primary" href="#work"><span data-i18n="hero.cta1">See the work</span> <span class="btn-arrow" aria-hidden="true">↓</span></a>        </div>
         <ul class="hero-social reveal" aria-label="Profiles">
           <li><a href="https://github.com/mrzroot" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a></li>
           <li><a href="https://www.linkedin.com/in/mrzroot" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
@@ -227,56 +217,10 @@
       </div>
     </section>
 
-    <!-- PRODUCT WORK / DEMOS -->
-    <section class="section container" id="products" aria-labelledby="products-title">
-      <header class="section-head reveal">
-        <span class="section-index">03</span>
-        <h2 id="products-title" data-i18n="prod.title">Product work &amp; live demos</h2>
-        <p class="section-sub" data-i18n="prod.sub">Business applications I’ve built. Their source is private, so each one has an interactive demo rebuilt from the real UI — with fictional data and no connection to production.</p>
-      </header>
-
-      <div class="cards cards-2">
-        <article class="card card-product reveal" data-project="sms">
-          <div class="card-top"><span class="card-tag">Python · Flask</span><span class="card-meta badge-private" data-i18n="card.private">Private source</span></div>
-          <h3><a class="card-link" href="demos/?project=sms&amp;screen=login">sms</a></h3>
-          <p class="card-tagline" data-i18n="p.sms.t">SMS management dashboard</p>
-          <p data-i18n="p.sms.d">A role-based operations portal for SMS intake, follow-up, account tracking, Excel imports, audit logs and financial reports.</p>
-          <ul class="tags" aria-label="Features"><li>RBAC</li><li>Excel import</li><li>Audit log</li><li>Reports</li></ul>
-          <span class="card-cta" aria-hidden="true"><svg><use href="#i-play"/></svg> <span data-i18n="card.demo">Live demo</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
-        </article>
-
-        <article class="card card-product reveal" data-project="operational-budgeting">
-          <div class="card-top"><span class="card-tag">Laravel · Vue 3 · TS</span><span class="card-meta badge-private" data-i18n="card.private">Private source</span></div>
-          <h3><a class="card-link" href="demos/?project=budget&amp;screen=login">operational-budgeting</a></h3>
-          <p class="card-tagline" data-i18n="p.ob.t">Persian RTL budgeting platform</p>
-          <p data-i18n="p.ob.d">Budget cycles, allocations, approval workflows, unit tasks and monthly reporting in a right-to-left business application.</p>
-          <ul class="tags" aria-label="Features"><li>RTL</li><li>Approvals</li><li>Budget cycles</li><li>Reporting</li></ul>
-          <span class="card-cta" aria-hidden="true"><svg><use href="#i-play"/></svg> <span data-i18n="card.demo">Live demo</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
-        </article>
-      </div>
-
-      <div class="demo-hub reveal">
-        <div class="demo-hub-head">
-          <div>
-            <h3 data-i18n="hub.title">Interactive demo hub</h3>
-            <p data-i18n="hub.sub">Five Persian RTL products, each with its own login, navigation and core screens.</p>
-          </div>
-          <a class="btn btn-ghost btn-sm" href="demos/"><span data-i18n="hub.open">Open the hub</span> <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-        <ol class="demo-list">
-          <li><a href="demos/?project=sms&amp;screen=login"><span class="demo-n">01</span><span class="demo-name" data-i18n="d.sms">SMS management dashboard</span><span class="demo-stack">Python · Flask</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          <li><a href="demos/?project=budget&amp;screen=login"><span class="demo-n">02</span><span class="demo-name" data-i18n="d.budget">Operational budgeting platform</span><span class="demo-stack">Laravel · Vue 3</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          <li><a href="demos/?project=food&amp;screen=login"><span class="demo-n">03</span><span class="demo-name" data-i18n="d.food">Food operations &amp; inventory</span><span class="demo-stack">React 19 · Laravel 12</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          <li><a href="demos/?project=arbitration&amp;screen=home"><span class="demo-n">04</span><span class="demo-name" data-i18n="d.arb">Arbitration services portal</span><span class="demo-stack">Vue 3 · Django REST</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          <li><a href="demos/?project=portal&amp;screen=home"><span class="demo-n">05</span><span class="demo-name" data-i18n="d.portal">Business organization portal redesign</span><span class="demo-stack">TanStack Start · Supabase</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-        </ol>
-      </div>
-    </section>
-
     <!-- STACK -->
     <section class="section container" id="stack" aria-labelledby="stack-title">
       <header class="section-head reveal">
-        <span class="section-index">04</span>
+        <span class="section-index">03</span>
         <h2 id="stack-title" data-i18n="stack.title">Stack</h2>
         <p class="section-sub" data-i18n="stack.sub">The tools I reach for day to day. No skill bars — the projects above are the evidence.</p>
       </header>
@@ -292,7 +236,7 @@
     <!-- CONTACT -->
     <section class="section container contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-card reveal">
-        <span class="section-index">05</span>
+        <span class="section-index">04</span>
         <h2 id="contact-title" data-i18n="contact.title">Have a workflow that should run itself?</h2>
         <p data-i18n="contact.sub">I’m happy to talk about automation, internal tools, dashboards and open-source collaboration. Email is the most reliable way to reach me.</p>
         <div class="contact-mail">
