@@ -5,7 +5,6 @@
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const root = document.documentElement;
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const EMAIL = 'contact@mrzroot.dev';
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   /* ---------- data gathered from the page (before any translation) ---------- */
@@ -35,39 +34,6 @@
   };
 
   /* ---------- small utilities ---------- */
-
-  const toastEl = $('[data-toast]');
-  let toastTimer;
-  function toast(msg) {
-    toastEl.textContent = msg;
-    toastEl.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
-  }
-
-  async function copy(text) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return true;
-    } catch {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.setAttribute('readonly', '');
-      ta.style.cssText = 'position:fixed;opacity:0';
-      document.body.appendChild(ta);
-      ta.select();
-      let ok = false;
-      try { ok = document.execCommand('copy'); } catch { ok = false; }
-      ta.remove();
-      return ok;
-    }
-  }
-
-  async function copyEmail() {
-    const ok = await copy(EMAIL);
-    toast(ok ? (lang === 'fa' ? 'ایمیل کپی شد ✓' : 'Email copied ✓') : EMAIL);
-    return ok;
-  }
 
   function goTo(id) {
     const el = id === 'top' ? document.body : document.getElementById(id);
@@ -166,23 +132,6 @@
     });
   }
 
-  /* ---------- copy buttons ---------- */
-
-  $$('[data-copy]').forEach((btn) => {
-    btn.addEventListener('click', async () => {
-      const ok = await copy(btn.dataset.copy);
-      const label = $('[data-copy-label]', btn);
-      btn.classList.toggle('copied', ok);
-      if (label) {
-        label.textContent = ok ? (lang === 'fa' ? 'کپی شد' : 'Copied') : (lang === 'fa' ? 'کپی' : 'Copy');
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          label.textContent = lang === 'fa' ? 'کپی' : 'Copy';
-        }, 1800);
-      }
-    });
-  });
-
   /* ---------- i18n (English default, optional Persian / RTL) ---------- */
 
   const FA = {
@@ -236,8 +185,8 @@
     'stack.title': 'ابزارها',
     'stack.sub': 'ابزارهایی که هر روز با آن‌ها کار می‌کنم. نوار مهارت نگذاشته‌ام؛ پروژه‌های بالا گواه‌اند.',
     'contact.title': 'کاری دارید که باید خودش انجام شود؟',
-    'contact.sub': 'خوشحال می‌شوم درباره‌ی خودکارسازی، ابزارهای داخلی، داشبوردها و همکاری متن‌باز صحبت کنیم. مطمئن‌ترین راه تماس، ایمیل است.',
-    'contact.copy': 'کپی',
+    'contact.sub': 'خوشحال می‌شوم درباره‌ی خودکارسازی، ابزارهای داخلی، داشبوردها و همکاری متن‌باز صحبت کنیم. مطمئن‌ترین راه تماس، تلگرام است.',
+    'contact.pref': 'راه ترجیحی · تلگرام',
     'footer.built': 'HTML، CSS و JS ساده · میزبانی روی GitHub Pages',
     'footer.src': 'مشاهده‌ی کد',
   };
@@ -310,7 +259,7 @@
         ['open <name>', 'open a repository, e.g. open printbridge'],
         ['stack', 'tools I use'],
         ['contact', 'ways to reach me'],
-        ['copy-email', 'copy ' + EMAIL],
+        ['telegram', 'message me on Telegram (preferred)'],
         ['goto <section>', 'scroll to about | work | stack | contact'],
         ['lang fa|en', 'switch site language'],
         ['cat developer.py', 'the profile class'],
@@ -345,14 +294,13 @@
       ].forEach(([k, v]) => print(`  <span class="t-n">${pad(k, 11)}</span>${esc(v)}`));
     },
     contact() {
-      print(`  <span class="t-n">email   </span> <a href="mailto:${EMAIL}">${EMAIL}</a>`);
+      print(`  <span class="t-n">telegram</span> <a href="${links.telegram}" target="_blank" rel="noopener">t.me/mrzroot</a> <span class="t-ok">← preferred</span>`);
       print(`  <span class="t-n">github  </span> <a href="${links.github}" target="_blank" rel="noopener">github.com/mrzroot</a>`);
       print(`  <span class="t-n">linkedin</span> <a href="${links.linkedin}" target="_blank" rel="noopener">linkedin.com/in/mrzroot</a>`);
-      print(`  <span class="t-n">telegram</span> <a href="${links.telegram}" target="_blank" rel="noopener">t.me/mrzroot</a>`);
     },
-    async 'copy-email'() {
-      const ok = await copyEmail();
-      print(ok ? `<span class="t-ok">✓ copied ${EMAIL}</span>` : `<span class="t-err">clipboard unavailable — ${EMAIL}</span>`);
+    telegram() {
+      print('<span class="t-ok">→ opening t.me/mrzroot…</span>');
+      openUrl(links.telegram);
     },
     open(arg) {
       const q = (arg || '').toLowerCase();
@@ -385,7 +333,7 @@
     clear() { termLog.innerHTML = ''; },
     sudo() { print('<span class="t-dim">nice try — this site runs fine without root.</span>'); },
   };
-  const aliases = { '?': 'help', 'h': 'help', 'work': 'projects', 'repos': 'projects', 'email': 'contact', 'cls': 'clear' };
+  const aliases = { '?': 'help', 'h': 'help', 'work': 'projects', 'repos': 'projects', 'tg': 'telegram', 'cls': 'clear' };
 
   function findTarget(q) {
     const pool = projects.map((p) => ({ name: p.name, url: p.url, keys: [p.key, p.name] }));
@@ -537,13 +485,11 @@
         group: fa ? 'پروژه‌ها' : 'Projects', icon: '↗', label: p.name, hint: 'github',
         run: () => openUrl(p.url),
       })),
-      { group: fa ? 'فرمان‌ها' : 'Actions', icon: '⧉', label: fa ? 'کپی ایمیل' : 'Copy email address', hint: EMAIL, run: copyEmail },
-      { group: fa ? 'فرمان‌ها' : 'Actions', icon: '@', label: fa ? 'ارسال ایمیل' : 'Send an email', hint: 'mailto', run: () => { location.href = 'mailto:' + EMAIL; } },
+      { group: fa ? 'فرمان‌ها' : 'Actions', icon: '✈', label: fa ? 'پیام در تلگرام' : 'Message me on Telegram', hint: 't.me/mrzroot', run: () => openUrl(links.telegram) },
       { group: fa ? 'فرمان‌ها' : 'Actions', icon: 'A', label: fa ? 'Switch to English' : 'نمایش فارسی (Switch to Persian)', hint: fa ? 'EN' : 'FA', run: () => setLang(fa ? 'en' : 'fa') },
       { group: fa ? 'فرمان‌ها' : 'Actions', icon: '>', label: fa ? 'رفتن به ترمینال' : 'Focus the terminal', hint: 'hero', run: () => { goTo('top'); finishBootNow(); setTimeout(() => termInput.focus({ preventScroll: true }), 350); } },
       { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'GitHub', hint: '@mrzroot', run: () => openUrl(links.github) },
       { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'LinkedIn', hint: 'in/mrzroot', run: () => openUrl(links.linkedin) },
-      { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'Telegram', hint: 't.me/mrzroot', run: () => openUrl(links.telegram) },
     ];
   }
 
