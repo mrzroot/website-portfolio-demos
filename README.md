@@ -4,30 +4,17 @@ Personal portfolio of **Mohammadreza Zare** (M-R-Z, [@mrzroot](https://github.co
 
 Live site: <https://mrzroot.github.io/website-portfolio-demos/>
 
-It's a static site with a dark terminal look. You get a hero with an interactive terminal, an About section, open-source projects, product work with live demos, the stack, and contact details. The UI is in English by default, and a toggle switches it to Persian (RTL).
+It's a static site with a dark terminal look. You get a hero with an interactive terminal, an About section, open-source projects, the stack, and contact details. The UI is in English by default, and a toggle switches it to Persian (RTL).
 
 ## Structure
 
 ```
-index.html        Portfolio (hero, about, open source, product work, stack, contact)
+index.html        Portfolio (hero, about, open source, stack, contact)
 assets/site.css   Styles: dark theme, responsive, RTL-aware via logical properties
 assets/site.js    Reveal-on-scroll, nav state, terminal, Ctrl/⌘ K palette, EN/FA toggle
 assets/og.png     Social preview image
-demos/            Interactive demo hub (five Persian RTL product demos)
 404.html          Not-found page for GitHub Pages
 ```
-
-## Interactive demos
-
-The five product demos now live in [`demos/`](https://mrzroot.github.io/website-portfolio-demos/demos/). Old links like `/?project=sms&screen=login` still work, because they redirect to the same screen under `demos/`.
-
-- [SMS management](https://mrzroot.github.io/website-portfolio-demos/demos/?project=sms&screen=login)
-- [Operational budgeting](https://mrzroot.github.io/website-portfolio-demos/demos/?project=budget&screen=login)
-- [Food and inventory](https://mrzroot.github.io/website-portfolio-demos/demos/?project=food&screen=login)
-- [Arbitration services](https://mrzroot.github.io/website-portfolio-demos/demos/?project=arbitration&screen=home)
-- [Organization services portal](https://mrzroot.github.io/website-portfolio-demos/demos/?project=portal&screen=home)
-
-The demo layouts and navigation follow the original projects. Organization names, logos, people, accounts, and records were removed or replaced with fictional examples. The demos run entirely in the browser, don't connect to any production service, and don't store submitted data.
 
 ## Keyboard
 

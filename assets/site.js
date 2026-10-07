@@ -17,23 +17,13 @@
       name: link.textContent.trim(),
       url: link.getAttribute('href'),
       tagline: $('.card-tagline', card).textContent.trim(),
-      external: link.target === '_blank',
-      el: card,
     };
   });
-
-  const demos = $$('.demo-list a').map((a) => ({
-    key: new URL(a.href).searchParams.get('project'),
-    name: $('.demo-name', a).textContent.trim(),
-    stack: $('.demo-stack', a).textContent.trim(),
-    url: a.getAttribute('href'),
-  }));
 
   const sections = [
     { id: 'top', label: 'Top' },
     { id: 'about', label: 'About' },
     { id: 'work', label: 'Open source' },
-    { id: 'products', label: 'Product work & demos' },
     { id: 'stack', label: 'Stack' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -88,9 +78,8 @@
     return true;
   }
 
-  function openUrl(url, external) {
-    if (external) window.open(url, '_blank', 'noopener');
-    else location.href = url;
+  function openUrl(url) {
+    window.open(url, '_blank', 'noopener');
   }
 
   /* ---------- year + clock ---------- */
@@ -200,14 +189,12 @@
     'skip': 'رفتن به محتوا',
     'nav.about': 'درباره',
     'nav.work': 'متن‌باز',
-    'nav.demos': 'دموها',
     'nav.stack': 'ابزارها',
     'nav.contact': 'تماس',
     'hero.kicker': 'M-R-Z · مشهد، ایران',
     'hero.title': 'ابزارهای کاربردی،<br><span class="grad">با کدی تمیز.</span>',
     'hero.lede': 'من <strong>محمدرضا زارع</strong> هستم؛ توسعه‌دهنده‌ی پایتون و سازنده‌ی ابزارهای خودکارسازی. اسکریپت‌های بک‌اند، داشبوردهای سازمانی و ابزارهای متن‌باز می‌نویسم و تلاش می‌کنم کد ساده، سریع و خوانا بماند.',
     'hero.cta1': 'دیدن پروژه‌ها',
-    'hero.cta2': 'دموهای زنده',
     'about.title': 'درباره من',
     'about.lead': 'مسئله‌هایی را دوست دارم که یک ابزار کوچک و خوش‌ساخت، ساعت‌ها کار تکراری را حذف کند.',
     'about.p1': 'بیشتر وقتم صرف خودکارسازی با پایتون، APIهای بک‌اند و داشبوردهای داخلی‌ای می‌شود که تیم‌ها هر روز با آن‌ها کار می‌کنند: عملیات پیامک، گردش کار بودجه، انبار و پیگیری درخواست‌ها. بسیاری از آن‌ها برنامه‌های فارسی و راست‌به‌چپ هستند؛ برای همین به درستیِ چیدمان RTL، تاریخ و ورود داده اهمیت می‌دهم.',
@@ -246,22 +233,6 @@
     'toc.7': 'کتاب و نقشه‌راه',
     'card.repo': 'مخزن',
     'card.fork': 'فورک',
-    'card.private': 'کد خصوصی',
-    'card.demo': 'دموی زنده',
-    'prod.title': 'پروژه‌های سازمانی و دموی زنده',
-    'prod.sub': 'برنامه‌های تجاری‌ای که ساخته‌ام. کد آن‌ها خصوصی است، پس برای هرکدام یک دموی تعاملی از روی رابط واقعی ساخته شده؛ با داده‌ی ساختگی و بدون اتصال به سرور اصلی.',
-    'p.sms.t': 'داشبورد مدیریت پیامک',
-    'p.sms.d': 'پرتال عملیاتی مبتنی بر نقش برای دریافت و پیگیری پیامک‌ها، پیگیری حساب‌ها، ورود اطلاعات از اکسل، لاگ ممیزی و گزارش‌های مالی.',
-    'p.ob.t': 'سامانه‌ی بودجه‌ریزی فارسی و راست‌به‌چپ',
-    'p.ob.d': 'چرخه‌های بودجه، تخصیص، گردش کار تأیید، وظایف واحدها و گزارش ماهانه در یک برنامه‌ی سازمانی راست‌به‌چپ.',
-    'hub.title': 'مرکز دموهای تعاملی',
-    'hub.sub': 'پنج محصول فارسی و راست‌به‌چپ، هرکدام با صفحه‌ی ورود، منو و صفحه‌های اصلی خودش.',
-    'hub.open': 'ورود به مرکز دموها',
-    'd.sms': 'داشبورد مدیریت پیامک',
-    'd.budget': 'سامانه‌ی بودجه‌ریزی عملیاتی',
-    'd.food': 'عملیات غذا و انبار',
-    'd.arb': 'پرتال خدمات داوری',
-    'd.portal': 'بازطراحی پرتال سازمان تجاری',
     'stack.title': 'ابزارها',
     'stack.sub': 'ابزارهایی که هر روز با آن‌ها کار می‌کنم. نوار مهارت نگذاشته‌ام؛ پروژه‌های بالا گواه‌اند.',
     'contact.title': 'کاری دارید که باید خودش انجام شود؟',
@@ -336,12 +307,11 @@
         ['whoami', 'who I am'],
         ['about', 'short bio'],
         ['projects', 'open-source repositories'],
-        ['demos', 'live product demos'],
-        ['open <name>', 'open a project or demo, e.g. open printbridge'],
+        ['open <name>', 'open a repository, e.g. open printbridge'],
         ['stack', 'tools I use'],
         ['contact', 'ways to reach me'],
         ['copy-email', 'copy ' + EMAIL],
-        ['goto <section>', 'scroll to about | work | products | stack | contact'],
+        ['goto <section>', 'scroll to about | work | stack | contact'],
         ['lang fa|en', 'switch site language'],
         ['cat developer.py', 'the profile class'],
         ['clear', 'clear the screen'],
@@ -359,15 +329,11 @@
       print('<span class="t-dim">→ goto about</span>');
     },
     projects() {
-      projects.filter((p) => p.external).forEach((p) => {
+      projects.forEach((p) => {
         print(`  <a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a>`);
         print(`    <span class="t-dim">${esc(p.tagline)}</span>`);
       });
-      print('<span class="t-dim">→ open &lt;name&gt; · demos for product work</span>');
-    },
-    demos() {
-      demos.forEach((d) => print(`  <a href="${esc(d.url)}">${esc(pad(d.key, 12))}</a><span class="t-mut">${esc(d.name)}</span> <span class="t-dim">· ${esc(d.stack)}</span>`));
-      print('<span class="t-dim">  fictional data · runs entirely in the browser</span>');
+      print('<span class="t-dim">→ open &lt;name&gt;</span>');
     },
     stack() {
       [
@@ -392,15 +358,15 @@
       const q = (arg || '').toLowerCase();
       if (!q) return print('<span class="t-err">usage: open &lt;name&gt;</span> <span class="t-dim">— try: open agentforge</span>');
       const target = findTarget(q);
-      if (!target) return print(`<span class="t-err">no project matching "${esc(q)}"</span> <span class="t-dim">— see projects / demos</span>`);
+      if (!target) return print(`<span class="t-err">no project matching "${esc(q)}"</span> <span class="t-dim">— see projects</span>`);
       print(`<span class="t-ok">→ opening ${esc(target.name)}…</span>`);
-      openUrl(target.url, true);
+      openUrl(target.url);
     },
     goto(arg) {
       const q = (arg || '').toLowerCase().replace(/^#/, '');
-      const map = { projects: 'work', 'open-source': 'work', demos: 'products', product: 'products', home: 'top' };
+      const map = { projects: 'work', 'open-source': 'work', home: 'top' };
       const id = map[q] || q;
-      if (!sections.some((s) => s.id === id)) return print('<span class="t-err">usage: goto about | work | products | stack | contact</span>');
+      if (!sections.some((s) => s.id === id)) return print('<span class="t-err">usage: goto about | work | stack | contact</span>');
       print(`<span class="t-dim">→ #${esc(id)}</span>`);
       goTo(id);
     },
@@ -414,7 +380,7 @@
       developerPy.forEach((l) => print(l));
     },
     ls() {
-      print('<span class="p">about/  projects/  demos/  stack/  contact/</span>  developer.py');
+      print('<span class="p">about/  projects/  stack/  contact/</span>  developer.py');
     },
     clear() { termLog.innerHTML = ''; },
     sudo() { print('<span class="t-dim">nice try — this site runs fine without root.</span>'); },
@@ -422,10 +388,7 @@
   const aliases = { '?': 'help', 'h': 'help', 'work': 'projects', 'repos': 'projects', 'email': 'contact', 'cls': 'clear' };
 
   function findTarget(q) {
-    const pool = [
-      ...projects.map((p) => ({ name: p.name, url: p.url, keys: [p.key, p.name] })),
-      ...demos.map((d) => ({ name: d.name + ' (demo)', url: d.url, keys: [d.key] })),
-    ];
+    const pool = projects.map((p) => ({ name: p.name, url: p.url, keys: [p.key, p.name] }));
     return pool.find((t) => t.keys.some((k) => k === q))
       || pool.find((t) => t.keys.some((k) => k.startsWith(q)))
       || pool.find((t) => t.keys.some((k) => k.includes(q)));
@@ -457,7 +420,7 @@
     }
     const cmd = parts[0].toLowerCase();
     const arg = parts.slice(1).join(' ').toLowerCase();
-    const opts = cmd === 'open' ? [...projects.map((p) => p.name), ...demos.map((d) => d.key)]
+    const opts = cmd === 'open' ? projects.map((p) => p.name)
       : cmd === 'goto' ? sections.map((s) => s.id)
       : cmd === 'lang' ? ['fa', 'en']
       : cmd === 'cat' ? ['developer.py'] : [];
@@ -563,7 +526,7 @@
   function paletteItems() {
     const fa = lang === 'fa';
     const sectionLabels = fa
-      ? { top: 'بالای صفحه', about: 'درباره', work: 'متن‌باز', products: 'پروژه‌های سازمانی و دموها', stack: 'ابزارها', contact: 'تماس' }
+      ? { top: 'بالای صفحه', about: 'درباره', work: 'متن‌باز', stack: 'ابزارها', contact: 'تماس' }
       : null;
     return [
       ...sections.map((s) => ({
@@ -571,19 +534,16 @@
         hint: s.id === 'top' ? '' : '#' + s.id, run: () => goTo(s.id),
       })),
       ...projects.map((p) => ({
-        group: fa ? 'پروژه‌ها' : 'Projects', icon: p.external ? '↗' : '▶', label: p.name, hint: p.external ? 'github' : 'demo',
-        run: () => openUrl(p.url, p.external),
-      })),
-      ...demos.map((d) => ({
-        group: fa ? 'دموهای زنده' : 'Live demos', icon: '▶', label: d.name, hint: d.stack, run: () => openUrl(d.url, false),
+        group: fa ? 'پروژه‌ها' : 'Projects', icon: '↗', label: p.name, hint: 'github',
+        run: () => openUrl(p.url),
       })),
       { group: fa ? 'فرمان‌ها' : 'Actions', icon: '⧉', label: fa ? 'کپی ایمیل' : 'Copy email address', hint: EMAIL, run: copyEmail },
       { group: fa ? 'فرمان‌ها' : 'Actions', icon: '@', label: fa ? 'ارسال ایمیل' : 'Send an email', hint: 'mailto', run: () => { location.href = 'mailto:' + EMAIL; } },
       { group: fa ? 'فرمان‌ها' : 'Actions', icon: 'A', label: fa ? 'Switch to English' : 'نمایش فارسی (Switch to Persian)', hint: fa ? 'EN' : 'FA', run: () => setLang(fa ? 'en' : 'fa') },
       { group: fa ? 'فرمان‌ها' : 'Actions', icon: '>', label: fa ? 'رفتن به ترمینال' : 'Focus the terminal', hint: 'hero', run: () => { goTo('top'); finishBootNow(); setTimeout(() => termInput.focus({ preventScroll: true }), 350); } },
-      { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'GitHub', hint: '@mrzroot', run: () => openUrl(links.github, true) },
-      { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'LinkedIn', hint: 'in/mrzroot', run: () => openUrl(links.linkedin, true) },
-      { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'Telegram', hint: 't.me/mrzroot', run: () => openUrl(links.telegram, true) },
+      { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'GitHub', hint: '@mrzroot', run: () => openUrl(links.github) },
+      { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'LinkedIn', hint: 'in/mrzroot', run: () => openUrl(links.linkedin) },
+      { group: fa ? 'پروفایل‌ها' : 'Profiles', icon: '↗', label: 'Telegram', hint: 't.me/mrzroot', run: () => openUrl(links.telegram) },
     ];
   }
 
