@@ -1,55 +1,333 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101a17">
-  <meta name="description" content="پنج نمونه دموی تعاملی از داشبورد پیامک، بودجه‌ریزی، عملیات غذا، پیگیری درخواست و پورتال سازمانی.">
-  <title>نمونه‌کارهای وب | دموی تعاملی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      var q = new URLSearchParams(location.search);
+      if (q.has('project') || q.has('screen')) location.replace('demos/' + location.search + location.hash);
+    })();
+  </script>
+  <title>Mohammadreza Zare · mrzroot — Python developer &amp; automation builder</title>
+  <meta name="description" content="Portfolio of Mohammadreza Zare (M-R-Z, @mrzroot): Python developer, automation builder and open-source enthusiast in Mashhad, Iran. Projects, live demos, stack and contact.">
+  <meta name="author" content="Mohammadreza Zare">
+  <meta name="theme-color" content="#07090d">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://mrzroot.github.io/website-portfolio-demos/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohammadreza Zare · mrzroot">
+  <meta property="og:description" content="Python developer, automation builder and open-source enthusiast. Practical tools, cleanly built.">
+  <meta property="og:url" content="https://mrzroot.github.io/website-portfolio-demos/">
+  <meta property="og:image" content="https://mrzroot.github.io/website-portfolio-demos/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohammadreza Zare",
+    "alternateName": ["M-R-Z", "mrzroot"],
+    "jobTitle": "Python Developer",
+    "email": "mailto:contact@mrzroot.dev",
+    "address": { "@type": "PostalAddress", "addressLocality": "Mashhad", "addressCountry": "IR" },
+    "url": "https://mrzroot.github.io/website-portfolio-demos/",
+    "sameAs": ["https://github.com/mrzroot", "https://www.linkedin.com/in/mrzroot", "https://t.me/mrzroot"],
+    "knowsAbout": ["Python", "Flask", "Django", "Laravel", "Vue", "React", "TypeScript", "MySQL", "SQLite", "Git", "Automation"]
+  }
+  </script>
 </head>
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="صفحه اصلی نمونه‌کارها">
-      <span class="brand-mark"><i></i><i></i><i></i></span>
-      <span><b>استودیو محصول</b><small>نمونه‌کارهای وب</small></span>
-    </a>
-    <div class="topbar-meta"><span class="live-dot"></span> نسخه نمایشی تعاملی <span class="top-divider"></span><span>داده‌های آزمایشی</span></div>
-    <a class="contact-link" href="https://github.com/mrzroot">پروفایل گیت‌هاب <span>↗</span></a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.53 11.53 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.34-1.79.84l-4.93-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.18 13.2l-4.86-1.52c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.32 1.65.21 1.39 1.5z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.52.85l10.4-6.5a1 1 0 0 0 0-1.7L9.52 4.65A1 1 0 0 0 8 5.5z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></g></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></g></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <div class="backdrop" aria-hidden="true"><div class="glow glow-a"></div><div class="glow glow-b"></div></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="nav" id="top">
+    <div class="nav-inner container">
+      <a class="logo" href="#top" aria-label="mrzroot — back to top">
+        <span class="logo-prompt" aria-hidden="true">&gt;_</span>
+        <span class="logo-text">mrzroot</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#products" data-i18n="nav.demos">Demos</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="chip-btn lang-toggle" type="button" data-lang-toggle aria-label="Switch language to Persian" title="فارسی / English">
+          <span data-lang-label>FA</span>
+        </button>
+        <button class="chip-btn palette-btn" type="button" data-palette-open aria-haspopup="dialog" aria-label="Open command palette">
+          <svg aria-hidden="true"><use href="#i-search"/></svg>
+          <kbd data-mod-key>Ctrl K</kbd>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="intro">
-      <div class="intro-copy">
-        <div class="eyebrow"><span class="eyebrow-line"></span> طراحی و توسعه محصول دیجیتال</div>
-        <h1>محصولاتی برای<br><em>کارهای واقعی.</em></h1>
-        <p>پنج محصول با صفحه‌ی ورود، منوی اختصاصی و بخش‌های اصلی خودشان؛ برای دیدن هرکدام، محیطش را انتخاب کنید.</p>
-        <div class="intro-foot"><span class="scroll-cue">⌄</span> صفحه‌ی ورود را باز کنید یا وارد محیط نمایشی شوید</div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="hero-kicker reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-i18n="hero.kicker">M-R-Z · Mashhad, Iran</span>
+          <span class="kicker-sep" aria-hidden="true">/</span>
+          <span class="clock" data-clock dir="ltr" aria-label="Local time in Mashhad">--:--</span>
+        </p>
+        <h1 id="hero-title" class="reveal" data-i18n="hero.title">Practical tools,<br><span class="grad">cleanly built.</span></h1>
+        <p class="hero-lede reveal" data-i18n="hero.lede">I’m <strong>Mohammadreza Zare</strong> — a Python developer and automation builder. I write backend scripts, business dashboards and open-source utilities, and I keep the code simple, fast and readable.</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="#work"><span data-i18n="hero.cta1">See the work</span> <span class="btn-arrow" aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="demos/"><svg aria-hidden="true"><use href="#i-play"/></svg><span data-i18n="hero.cta2">Open live demos</span></a>
+        </div>
+        <ul class="hero-social reveal" aria-label="Profiles">
+          <li><a href="https://github.com/mrzroot" target="_blank" rel="noopener" aria-label="GitHub"><svg aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/mrzroot" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+          <li><a href="https://t.me/mrzroot" target="_blank" rel="noopener" aria-label="Telegram"><svg aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
+          <li><a href="mailto:contact@mrzroot.dev" aria-label="Email"><svg aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+        </ul>
       </div>
-      <div class="intro-note"><span class="note-index" id="current-index">01 / 05</span><span class="note-rule"></span><p>چیدمان و مسیرهای هر محیط از روی رابط پروژه‌ی اصلی بازسازی شده‌اند؛ ورود و اطلاعات، نمایشی هستند.</p><span class="note-stamp">DEMO<br>COLLECTION</span></div>
+
+      <div class="terminal reveal" dir="ltr" lang="en" data-terminal>
+        <div class="term-bar">
+          <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="term-title">mrz@root: ~</span>
+          <span class="term-hint" aria-hidden="true">interactive</span>
+        </div>
+        <div class="term-body" data-term-body>
+          <div class="term-log" data-term-log aria-live="polite">
+            <noscript>
+              <p><span class="p">$</span> whoami</p>
+              <p>mohammadreza zare — python developer · automation builder</p>
+            </noscript>
+          </div>
+          <form class="term-input" data-term-form autocomplete="off">
+            <label for="term-cmd" class="p">$</label>
+            <input id="term-cmd" name="cmd" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command. Type help for a list of commands." placeholder="type 'help'">
+          </form>
+        </div>
+      </div>
     </section>
 
-    <div class="demo-notice"><span class="notice-icon">✳</span><div><b>محیط نمایشی با داده‌ی ساختگی</b><span>به هیچ سامانه یا پایگاه داده‌ی واقعی متصل نیست.</span></div><span class="notice-tag">SANDBOX</span></div>
-
-    <section class="workspace" aria-label="دموهای تعاملی">
-      <aside class="project-rail">
-        <div class="rail-heading"><span>نمونه‌ها</span><span class="rail-count">۰۵</span></div>
-        <nav id="project-nav" aria-label="انتخاب نمونه"></nav>
-        <div class="rail-bottom"><span class="rail-star">✳</span><span>یک مجموعه‌ی کوچک<br>از مسئله‌های بزرگ</span></div>
-      </aside>
-      <section class="showcase" id="showcase" aria-live="polite"></section>
+    <!-- ABOUT -->
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <header class="section-head reveal">
+        <span class="section-index">01</span>
+        <h2 id="about-title" data-i18n="about.title">About</h2>
+      </header>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="about-lead" data-i18n="about.lead">I like problems where a small, well-made tool removes hours of repetitive work.</p>
+          <p data-i18n="about.p1">Most of my time goes into Python automation, backend APIs and the internal dashboards that teams actually live in — SMS operations, budgeting workflows, inventory and request tracking. Many of them are Persian, right-to-left business apps, so I care about getting RTL, dates and data entry right.</p>
+          <p data-i18n="about.p2">On the side I publish open-source utilities: browser extensions, print bridges, CI examples and tooling for AI coding agents — and I maintain a curated resource list for Persian-speaking developers.</p>
+        </div>
+        <aside class="about-side reveal" aria-label="Quick facts">
+          <dl class="facts">
+            <div><dt data-i18n="facts.role">Role</dt><dd data-i18n="facts.roleV">Python developer · automation builder</dd></div>
+            <div><dt data-i18n="facts.focus">Focus</dt><dd data-i18n="facts.focusV">Python automation, backend APIs, open-source tools</dd></div>
+            <div><dt data-i18n="facts.learning">Learning</dt><dd data-i18n="facts.learningV">Backend &amp; data tooling</dd></div>
+            <div><dt data-i18n="facts.base">Based in</dt><dd data-i18n="facts.baseV">Mashhad, Iran</dd></div>
+            <div><dt data-i18n="facts.lang">Languages</dt><dd data-i18n="facts.langV">Persian, English</dd></div>
+          </dl>
+          <ol class="principles">
+            <li><span>01</span><p data-i18n="pr.1">Build practical tools that solve everyday problems.</p></li>
+            <li><span>02</span><p data-i18n="pr.2">Write clean, readable, simple code — less is more.</p></li>
+            <li><span>03</span><p data-i18n="pr.3">Keep learning, and share what I learn with the community.</p></li>
+          </ol>
+        </aside>
+      </div>
     </section>
 
-    <section class="closing">
-      <div><span class="closing-kicker">همکاری بعدی؟</span><h2>یک مسئله‌ی خوب،<br>شروع یک محصول است.</h2></div>
-      <div class="closing-side"><p>برای طراحی و ساخت پنل‌های مدیریتی، ابزارهای داخلی و محصولات تحت وب آماده‌ام.</p><a href="https://github.com/mrzroot" class="button button-light">مشاهده پروفایل <span>↗</span></a></div>
+    <!-- OPEN SOURCE -->
+    <section class="section container" id="work" aria-labelledby="work-title">
+      <header class="section-head reveal">
+        <span class="section-index">02</span>
+        <h2 id="work-title" data-i18n="work.title">Open source</h2>
+        <p class="section-sub" data-i18n="work.sub">Public repositories I build and maintain. Descriptions are kept honest — small projects are described as small.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card card-feature reveal" data-project="awesome-persian-developer-resources">
+          <div class="card-top">
+            <span class="card-tag">awesome-list</span>
+            <span class="card-meta">CC0-1.0</span>
+          </div>
+          <h3><a class="card-link" href="https://github.com/mrzroot/awesome-persian-developer-resources" target="_blank" rel="noopener">awesome-persian-developer-resources</a></h3>
+          <p class="card-tagline" data-i18n="p.apdr.t">Curated Persian developer resources hub</p>
+          <p data-i18n="p.apdr.d">A Persian-language list of developer tools, Iranian public APIs, Python packages, Persian fonts and UI kits, NLP/AI libraries and roadmaps — plus practical workarounds for sanctioned developer services.</p>
+          <ol class="feature-toc" aria-label="What’s inside">
+            <li data-i18n="toc.1">Sanction workarounds</li>
+            <li data-i18n="toc.2">Iranian public APIs</li>
+            <li data-i18n="toc.3">Python packages</li>
+            <li data-i18n="toc.4">Persian fonts &amp; UI</li>
+            <li data-i18n="toc.5">Persian NLP &amp; AI</li>
+            <li data-i18n="toc.6">Payments &amp; SMS</li>
+            <li data-i18n="toc.7">Books &amp; roadmaps</li>
+          </ol>
+          <span class="card-cta" aria-hidden="true"><svg><use href="#i-github"/></svg> <span data-i18n="card.repo">Repository</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
+        </article>
+
+        <article class="card reveal" data-project="universal-video-downloader">
+          <div class="card-top"><span class="card-tag">JavaScript</span><span class="card-meta">MV3</span></div>
+          <h3><a class="card-link" href="https://github.com/mrzroot/universal-video-downloader" target="_blank" rel="noopener">universal-video-downloader</a></h3>
+          <p class="card-tagline" data-i18n="p.uvd.t">Manifest V3 extension for HLS / M3U8 / MP4</p>
+          <p data-i18n="p.uvd.d">A Chrome &amp; Edge extension that detects video streams on the current page — HLS/M3U8 playlists, MP4 and WebM — and saves them via the browser’s downloads API. Inspection stays entirely client-side.</p>
+          <ul class="tags" aria-label="Topics"><li>Chrome</li><li>Service worker</li><li>HLS</li></ul>
+          <span class="card-cta" aria-hidden="true"><svg><use href="#i-github"/></svg> <span data-i18n="card.repo">Repository</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
+        </article>
+
+        <article class="card reveal" data-project="printbridge">
+          <div class="card-top"><span class="card-tag">Python</span><span class="card-meta badge-fork" data-i18n="card.fork">Fork</span></div>
+          <h3><a class="card-link" href="https://github.com/mrzroot/printbridge" target="_blank" rel="noopener">printbridge</a></h3>
+          <p class="card-tagline" data-i18n="p.pb.t">Local printing bridge for POS &amp; thermal printers</p>
+          <p data-i18n="p.pb.d">A tray agent that lets web apps print PDFs and TSPL thermal labels silently through a localhost API — no browser print dialog. Forked from AnouarSbia/printbridge for POS and label workflows.</p>
+          <ul class="tags" aria-label="Topics"><li>TSPL</li><li>POS</li><li>localhost API</li></ul>
+          <span class="card-cta" aria-hidden="true"><svg><use href="#i-github"/></svg> <span data-i18n="card.repo">Repository</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
+        </article>
+
+        <article class="card reveal" data-project="agentforge">
+          <div class="card-top"><span class="card-tag">TypeScript</span><span class="card-meta">Node.js</span></div>
+          <h3><a class="card-link" href="https://github.com/mrzroot/agentforge" target="_blank" rel="noopener">agentforge</a></h3>
+          <p class="card-tagline" data-i18n="p.af.t">Toolkit for AI coding-agent instructions</p>
+          <p data-i18n="p.af.d">A CLI that keeps one rules file in sync across Cursor, Claude Code, Copilot, Windsurf, Aider and others, packs code context into compact AST skeletons, and lints rule files for conflicts and leaked secrets.</p>
+          <ul class="tags" aria-label="Topics"><li>CLI</li><li>LLM tooling</li><li>AST</li></ul>
+          <span class="card-cta" aria-hidden="true"><svg><use href="#i-github"/></svg> <span data-i18n="card.repo">Repository</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
+        </article>
+
+        <article class="card reveal" data-project="jenkins">
+          <div class="card-top"><span class="card-tag">Groovy</span><span class="card-meta">CI/CD</span></div>
+          <h3><a class="card-link" href="https://github.com/mrzroot/jenkins" target="_blank" rel="noopener">jenkins</a></h3>
+          <p class="card-tagline" data-i18n="p.jk.t">Declarative CI/CD pipeline examples</p>
+          <p data-i18n="p.jk.d">A compact set of declarative Jenkins pipelines in Groovy — a staged pipeline and an SCM-polling variant — meant as a clear starting point for pipeline-as-code.</p>
+          <ul class="tags" aria-label="Topics"><li>Jenkins</li><li>Pipeline-as-code</li></ul>
+          <span class="card-cta" aria-hidden="true"><svg><use href="#i-github"/></svg> <span data-i18n="card.repo">Repository</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCT WORK / DEMOS -->
+    <section class="section container" id="products" aria-labelledby="products-title">
+      <header class="section-head reveal">
+        <span class="section-index">03</span>
+        <h2 id="products-title" data-i18n="prod.title">Product work &amp; live demos</h2>
+        <p class="section-sub" data-i18n="prod.sub">Business applications I’ve built. Their source is private, so each one has an interactive demo rebuilt from the real UI — with fictional data and no connection to production.</p>
+      </header>
+
+      <div class="cards cards-2">
+        <article class="card card-product reveal" data-project="sms">
+          <div class="card-top"><span class="card-tag">Python · Flask</span><span class="card-meta badge-private" data-i18n="card.private">Private source</span></div>
+          <h3><a class="card-link" href="demos/?project=sms&amp;screen=login">sms</a></h3>
+          <p class="card-tagline" data-i18n="p.sms.t">SMS management dashboard</p>
+          <p data-i18n="p.sms.d">A role-based operations portal for SMS intake, follow-up, account tracking, Excel imports, audit logs and financial reports.</p>
+          <ul class="tags" aria-label="Features"><li>RBAC</li><li>Excel import</li><li>Audit log</li><li>Reports</li></ul>
+          <span class="card-cta" aria-hidden="true"><svg><use href="#i-play"/></svg> <span data-i18n="card.demo">Live demo</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
+        </article>
+
+        <article class="card card-product reveal" data-project="operational-budgeting">
+          <div class="card-top"><span class="card-tag">Laravel · Vue 3 · TS</span><span class="card-meta badge-private" data-i18n="card.private">Private source</span></div>
+          <h3><a class="card-link" href="demos/?project=budget&amp;screen=login">operational-budgeting</a></h3>
+          <p class="card-tagline" data-i18n="p.ob.t">Persian RTL budgeting platform</p>
+          <p data-i18n="p.ob.d">Budget cycles, allocations, approval workflows, unit tasks and monthly reporting in a right-to-left business application.</p>
+          <ul class="tags" aria-label="Features"><li>RTL</li><li>Approvals</li><li>Budget cycles</li><li>Reporting</li></ul>
+          <span class="card-cta" aria-hidden="true"><svg><use href="#i-play"/></svg> <span data-i18n="card.demo">Live demo</span> <svg class="arr"><use href="#i-arrow"/></svg></span>
+        </article>
+      </div>
+
+      <div class="demo-hub reveal">
+        <div class="demo-hub-head">
+          <div>
+            <h3 data-i18n="hub.title">Interactive demo hub</h3>
+            <p data-i18n="hub.sub">Five Persian RTL products, each with its own login, navigation and core screens.</p>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="demos/"><span data-i18n="hub.open">Open the hub</span> <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ol class="demo-list">
+          <li><a href="demos/?project=sms&amp;screen=login"><span class="demo-n">01</span><span class="demo-name" data-i18n="d.sms">SMS management dashboard</span><span class="demo-stack">Python · Flask</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="demos/?project=budget&amp;screen=login"><span class="demo-n">02</span><span class="demo-name" data-i18n="d.budget">Operational budgeting platform</span><span class="demo-stack">Laravel · Vue 3</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="demos/?project=food&amp;screen=login"><span class="demo-n">03</span><span class="demo-name" data-i18n="d.food">Food operations &amp; inventory</span><span class="demo-stack">React 19 · Laravel 12</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="demos/?project=arbitration&amp;screen=home"><span class="demo-n">04</span><span class="demo-name" data-i18n="d.arb">Arbitration services portal</span><span class="demo-stack">Vue 3 · Django REST</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="demos/?project=portal&amp;screen=home"><span class="demo-n">05</span><span class="demo-name" data-i18n="d.portal">Business organization portal redesign</span><span class="demo-stack">TanStack Start · Supabase</span><svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="section container" id="stack" aria-labelledby="stack-title">
+      <header class="section-head reveal">
+        <span class="section-index">04</span>
+        <h2 id="stack-title" data-i18n="stack.title">Stack</h2>
+        <p class="section-sub" data-i18n="stack.sub">The tools I reach for day to day. No skill bars — the projects above are the evidence.</p>
+      </header>
+      <div class="stack-grid">
+        <div class="stack-group reveal"><h3><span class="p">~/</span>languages</h3><ul><li class="hl">Python</li><li>TypeScript</li><li>JavaScript</li><li>PHP</li><li>SQL</li></ul></div>
+        <div class="stack-group reveal"><h3><span class="p">~/</span>backend</h3><ul><li class="hl">Flask</li><li class="hl">Django</li><li>Laravel</li><li>REST APIs</li></ul></div>
+        <div class="stack-group reveal"><h3><span class="p">~/</span>frontend</h3><ul><li>Vue 3</li><li>React</li><li>RTL layouts</li><li>Browser extensions</li></ul></div>
+        <div class="stack-group reveal"><h3><span class="p">~/</span>data</h3><ul><li>MySQL</li><li>SQLite</li><li>Excel imports</li></ul></div>
+        <div class="stack-group reveal"><h3><span class="p">~/</span>tooling</h3><ul><li>Git</li><li>GitHub</li><li>Jenkins</li><li>Node.js</li></ul></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section container contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card reveal">
+        <span class="section-index">05</span>
+        <h2 id="contact-title" data-i18n="contact.title">Have a workflow that should run itself?</h2>
+        <p data-i18n="contact.sub">I’m happy to talk about automation, internal tools, dashboards and open-source collaboration. Email is the most reliable way to reach me.</p>
+        <div class="contact-mail">
+          <a class="mail-link" href="mailto:contact@mrzroot.dev">contact@mrzroot.dev</a>
+          <button class="chip-btn copy-btn" type="button" data-copy="contact@mrzroot.dev"><svg aria-hidden="true"><use href="#i-copy"/></svg><span data-copy-label data-i18n="contact.copy">Copy</span></button>
+        </div>
+        <ul class="contact-links">
+          <li><a href="https://github.com/mrzroot" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span><small>@mrzroot</small></a></li>
+          <li><a href="https://www.linkedin.com/in/mrzroot" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span><small>in/mrzroot</small></a></li>
+          <li><a href="https://t.me/mrzroot" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-telegram"/></svg><span>Telegram</span><small>t.me/mrzroot</small></a></li>
+        </ul>
+      </div>
     </section>
   </main>
-  <footer><span>نمونه‌کارهای وب · ۱۴۰۵</span><span>طراحی‌شده برای نمایش تجربه‌ی محصول</span><a href="#top">بازگشت به بالا ↑</a></footer>
-  <script src="app.js"></script>
+
+  <footer class="footer container">
+    <span>© <span data-year>2026</span> Mohammadreza Zare</span>
+    <span class="footer-mid" data-i18n="footer.built">Plain HTML, CSS &amp; JS · hosted on GitHub Pages</span>
+    <a href="https://github.com/mrzroot/website-portfolio-demos" target="_blank" rel="noopener" data-i18n="footer.src">View source</a>
+  </footer>
+
+  <div class="palette" data-palette hidden>
+    <div class="palette-scrim" data-palette-close></div>
+    <div class="palette-panel" role="dialog" aria-modal="true" aria-label="Command palette">
+      <div class="palette-search">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <input type="text" data-palette-input placeholder="Jump to a section, project or action…" aria-label="Search commands" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+        <kbd>Esc</kbd>
+      </div>
+      <ul class="palette-list" id="palette-list" role="listbox" data-palette-list></ul>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
