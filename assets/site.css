@@ -843,7 +843,7 @@ kbd { font-family: var(--mono); }
   color: var(--muted);
   cursor: pointer;
 }
-.palette-item small { margin-inline-start: auto; font-family: var(--mono); font-size: 11.5px; color: var(--dim); }
+.palette-item small { margin-inline-start: auto; font-family: var(--mono); font-size: 11.5px; color: var(--dim); direction: ltr; unicode-bidi: isolate; }
 .palette-item .pi-icon { width: 16px; text-align: center; color: var(--dim); font-family: var(--mono); }
 .palette-item[aria-selected="true"] { background: rgba(34, 211, 238, 0.09); color: var(--text); }
 .palette-item[aria-selected="true"] .pi-icon { color: var(--cyan); }
@@ -891,6 +891,11 @@ kbd { font-family: var(--mono); }
 html[lang="fa"] body { line-height: 1.85; }
 html[lang="fa"] .hero-kicker { font-family: var(--sans); font-size: 13px; }
 html[lang="fa"] .hero-kicker .clock { font-family: var(--mono); font-size: 12.5px; }
+html[lang="fa"] .facts dt,
+html[lang="fa"] .badge-fork,
+html[lang="fa"] .badge-private,
+html[lang="fa"] .palette-group { font-family: var(--sans); letter-spacing: 0; text-transform: none; }
+html[lang="fa"] .facts dt { font-size: 13px; padding-top: 0; }
 html[lang="fa"] .hero h1,
 html[lang="fa"] .section-head h2,
 html[lang="fa"] .contact-card h2,
