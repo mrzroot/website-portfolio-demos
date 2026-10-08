@@ -18,7 +18,7 @@ assets/og.png     Social preview image
 
 ## Keyboard
 
-- `Ctrl K` / `⌘ K` or `/` opens the command palette, where you can jump to a section, open a project, or copy the email address.
+- `Ctrl K` / `⌘ K` or `/` opens the command palette, where you can jump to a section, open a project, or message me on Telegram.
 - In the hero terminal, type `help`. `Tab` completes commands and `↑`/`↓` steps through history.
 - Add `?lang=fa` to the URL to open the site in Persian.
 
