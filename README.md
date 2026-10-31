@@ -1,7 +1,6 @@
 <p align="center"><img src=".github/assets/banner.svg" alt="mrzroot · portfolio: A static, terminal-style personal site" width="100%"></p>
 
 <p align="center">
-  <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/mrzroot/website-portfolio-demos?style=flat-square"></a>
   <a href="https://github.com/mrzroot/website-portfolio-demos/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/mrzroot/website-portfolio-demos?style=flat-square"></a>
 </p>
 
