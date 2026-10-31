@@ -52,4 +52,4 @@ Bug reports and ideas are welcome: open an [issue](../../issues/new/choose) (the
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+No open-source licence has been chosen yet, so the code and text are all rights reserved by the author. Ask in an issue if you want to reuse something.
