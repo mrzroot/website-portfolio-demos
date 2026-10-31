@@ -1,3 +1,12 @@
+<p align="center"><img src=".github/assets/banner.svg" alt="mrzroot · portfolio: A static, terminal-style personal site" width="100%"></p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/mrzroot/website-portfolio-demos?style=flat-square"></a>
+  <a href="https://github.com/mrzroot/website-portfolio-demos/commits"><img alt="Last commit" src="https://img.shields.io/github/last-commit/mrzroot/website-portfolio-demos?style=flat-square"></a>
+</p>
+
+<p align="center"><a href="CHANGELOG.md">Changelog</a> · <a href="CONTRIBUTING.md">Contributing</a></p>
+
 # mrzroot · portfolio
 
 Personal portfolio of **Mohammadreza Zare** (M-R-Z, [@mrzroot](https://github.com/mrzroot)): a Python developer, automation builder, and open-source enthusiast based in Mashhad, Iran.
@@ -36,3 +45,11 @@ python3 -m http.server 8000
 ## Deploy
 
 GitHub Pages serves the root of the `main` branch. `.nojekyll` is present, so files are served as-is.
+
+## Contributing
+
+Bug reports and ideas are welcome: open an [issue](../../issues/new/choose) (the templates ask for the steps and version we need). For code, read [CONTRIBUTING.md](CONTRIBUTING.md) first, keep each pull request to one change, and run the tests before you open it.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
