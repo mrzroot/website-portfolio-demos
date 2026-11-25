@@ -14,6 +14,16 @@ Live site: <https://mrzroot.github.io/website-portfolio-demos/>
 
 It's a static site with a dark terminal look. You get a hero with an interactive terminal, an About section, open-source projects, the stack, and contact details. The UI is in English by default, and a toggle switches it to Persian (RTL).
 
+## Project Lab
+
+Three browser-only demos with synthetic examples and their own project pages:
+
+- [Persian Retrieval Lab](projects/persian-retrieval/): Paste passages and rank the best matching evidence using local BM25. This demo retrieves text; it does not generate an answer.
+- [CSV Profile](projects/csv-profile/): Inspect the shape of a CSV and spot missing values, duplicate values, and mixed column types. Comma-separated, with a header row.
+- [JSON Mapping Studio](projects/json-mapping/): Preview how nested records map to a new shape before wiring a workflow. Missing fields are reported and become null.
+
+Open `/projects/` after starting the local server. The demos make no network requests and store no input. Run their logic tests with `node --test projects/logic.test.cjs`.
+
 ## Structure
 
 ```
