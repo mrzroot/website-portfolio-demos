@@ -1,0 +1,12 @@
+@import url("font.css");
+html:root{--bg:#101316;--bg-2:#171b20;--surface:#171b21;--surface-2:#232a31;--line:#394652;--line-2:#637585;--text:#faf7ee;--muted:#c8c6c6;--dim:#aab0b8;--cyan:#f1ba84;--cyan-soft:#f1ba8424;--magenta:#b6a3ff;--magenta-soft:#b6a3ff2b;--green:#ade1bd;--amber:#f5c88c}
+html .backdrop{background:radial-gradient(ellipse at 16% 14%,#45312b,transparent 43%),radial-gradient(ellipse at 82% 24%,#242d46,transparent 50%),var(--bg)}
+html .backdrop .glow{opacity:.18}
+html .nav.scrolled{background:#141b22ec}
+html .hero{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.4rem,5vw,4rem);padding-top:clamp(5.2rem,10vw,9rem);padding-bottom:clamp(2.8rem,8vw,6rem)}
+html .hero h1{font-weight:870;line-height:1.12;letter-spacing:-.065em}
+html[dir=rtl] .hero h1{letter-spacing:normal}
+html .hero-kicker{letter-spacing:.10em;border-radius:2px 12px 2px 12px}
+html .card,html .stack-item{border-radius:3px 16px 3px 16px}
+html .section-head{border-block-start:1px solid var(--line);padding-block-start:1.25rem}
+@media(max-width:850px){html .hero{grid-template-columns:1fr}}
