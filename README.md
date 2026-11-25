@@ -16,6 +16,8 @@ It's a static site with a dark terminal look. You get a hero with an interactive
 
 ## Project Lab
 
+[Review index / فهرست تغییرات پیشنهادی](PROJECT-REVIEWS.md) links to the branches and diffs across the public original repositories.
+
 The [public project catalog](projects/catalog.html) groups repositories by use and links to project websites when documented.
 
 Three browser-only demos with synthetic examples and their own project pages:
