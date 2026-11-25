@@ -16,6 +16,8 @@ It's a static site with a dark terminal look. You get a hero with an interactive
 
 ## Project Lab
 
+The [public project catalog](projects/catalog.html) groups repositories by use and links to project websites when documented.
+
 Three browser-only demos with synthetic examples and their own project pages:
 
 - [Persian Retrieval Lab](projects/persian-retrieval/): Paste passages and rank the best matching evidence using local BM25. This demo retrieves text; it does not generate an answer.
